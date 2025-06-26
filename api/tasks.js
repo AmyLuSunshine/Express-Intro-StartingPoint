@@ -15,5 +15,10 @@ router.get("/", (req, res) => {
 // Delete a task by id
 
 // Create a new task
+router.post("/", (req, res) => {
+const { title, description = "", completed = false, userId } = req.body;
+Task.create({ title, description, completed, userId });
+});
+
 
 module.exports = router;
